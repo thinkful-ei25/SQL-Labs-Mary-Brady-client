@@ -20,7 +20,7 @@ export function LoginPage(props) {
             </p>
             <img src={placeholderimg} className="x" alt="x" />
             <LoginForm />
-            <Link to="/register"><button>Sign Up</button></Link>
+            <Link to="/sign-up"><button>Sign Up</button></Link>
         </div>
     );
 }
