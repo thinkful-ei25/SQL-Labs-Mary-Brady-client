@@ -1,20 +1,26 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import placeholderimg from '../assets/placeholder.png';
 
 import LoginForm from './login-form';
 
 export function LandingPage(props) {
-    // If we are logged in redirect straight to the user's dashboard
+
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }
 
     return (
         <div className="home">
-            <h2>Welcome to Foo App</h2>
-            <LoginForm />
-            <Link to="/register">Register</Link>
+        
+            <h2 className="heading">Welcome to SQL Learning Labs!</h2>
+            <p>SQL Learning Labs is designed for students of all skill levels
+                to practice and master SQL Bash Commands!
+            </p>
+            <img src={placeholderimg} className="x" alt="x" />
+   
+            <Link to="/sign-up"><button>Sign Up</button></Link>
         </div>
     );
 }

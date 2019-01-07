@@ -1,7 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+import { connect } from 'react-redux';
+import { clearAuth } from '../actions/auth';
+import { clearAuthToken } from '../local-storage';
+import mainLogo from '../assets/logo2.png';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -19,7 +20,11 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar">
-                <h1>Foo App</h1>
+
+                <h1>
+                    <img src={mainLogo} className="logo" alt="SQL Learning Labs Logo" />
+                    SQL Learning Labs
+                </h1>
                 {logOutButton}
             </div>
         );
