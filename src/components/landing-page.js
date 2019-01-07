@@ -21,6 +21,8 @@ export function LandingPage(props) {
             <img src={placeholderimg} className="x" alt="x" />
    
             <Link to="/sign-up"><button>Sign Up</button></Link>
+
+            <Link to="/sign-up"><button>Login</button></Link>
         </div>
     );
 }

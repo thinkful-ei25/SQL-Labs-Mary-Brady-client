@@ -14,9 +14,8 @@ export function LoginPage(props) {
     return (
         <div className="home">
         
-            <h2 className="heading">Welcome to SQL Learning Labs!</h2>
-            <p>SQL Learning Labs is designed for students of all skill levels
-                to practice and master SQL Bash Commands!
+            <h2 className="heading">Login to SQL Learning Labs!</h2>
+            <p>Login Here
             </p>
             <img src={placeholderimg} className="x" alt="x" />
             <LoginForm />

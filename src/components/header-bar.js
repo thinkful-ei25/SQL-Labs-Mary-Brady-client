@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
+import {Link} from 'react-router-dom';
 import mainLogo from '../assets/logo2.png';
 
 export class HeaderBar extends React.Component {
@@ -22,7 +23,8 @@ export class HeaderBar extends React.Component {
             <div className="header-bar">
 
                 <h1>
-                    <img src={mainLogo} className="logo" alt="SQL Learning Labs Logo" />
+                <Link to="/"><img src={mainLogo} className="logo" alt="SQL Learning Labs Logo" />
+                </Link>
                     SQL Learning Labs
                 </h1>
                 {logOutButton}
