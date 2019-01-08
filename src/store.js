@@ -11,7 +11,7 @@ const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        question: frontofcardReducer,
+        userQuestion: frontofcardReducer,
         protectedData: protectedDataReducer
     }),
     applyMiddleware(thunk)

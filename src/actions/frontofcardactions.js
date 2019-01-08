@@ -6,9 +6,9 @@ import { bindActionCreators } from 'redux';
 
 ///////////Fetch Questions
 export const FETCH_USERQUESTIONS_SUCCESS = 'FETCH_USERQUESTIONS_SUCCESS';
-export const fetchUserQuestionsSuccess = questions => ({
+export const fetchUserQuestionsSuccess = question => ({
     type: FETCH_USERQUESTIONS_SUCCESS,
-    questions
+    question
 });
 
 export const FETCH_USERQUESTIONS_ERROR = 'FETCH_USERQUESTIONS_ERROR';
@@ -24,7 +24,7 @@ export const submitUserAnswerSuccess = guess => ({
 
 export const fetchUserQuestions = () => (dispatch, getState) => {
     const authToken = getState().authReducer.authToken;
-    return fetch(`${API_BASE_URL}/user/questions`, {
+    return fetch(`${API_BASE_URL}/question`, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${authToken}`
@@ -32,9 +32,9 @@ export const fetchUserQuestions = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((questions) => {
+        .then((res) => {
 
-            dispatch(fetchUserQuestionsSuccess(questions))
+            dispatch(fetchUserQuestionsSuccess(res.userQuestion))
         })
         .catch(err => {
             dispatch(fetchUserQuestionsError(err));

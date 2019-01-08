@@ -5,7 +5,7 @@ import {
 } from '../actions/frontofcardactions';
 
 const initialState = {
-    userQuestions: null,
+    userQuestion: null,
     error: null,
     userAnswer: null
 };
@@ -13,7 +13,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     if (action.type === FETCH_USERQUESTIONS_SUCCESS) {
         return Object.assign({}, state, {
-            userQuestions: action.questions,
+            userQuestion: action.question,
             error: null
         });
     } else if (action.type === FETCH_USERQUESTIONS_ERROR) {
