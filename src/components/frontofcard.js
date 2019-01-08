@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import requiresLogin from './requires-login';
 // TODO: import fetch after creating it.
-import {userGuess} from '../actions/frontofcardactions'
+import {userGuess, fetchUserQuestions} from '../actions/frontofcardactions'
 
 
 
 export class FrontOfCard extends React.Component {
     componentDidMount() {
-        //dispatch the fetch
-        this.props.dispatch();
+
+        this.props.dispatch(fetchUserQuestions);
     }
     guessSubmit() {
         const guess = this.refs.userquess.value;
