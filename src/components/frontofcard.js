@@ -2,61 +2,77 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import requiresLogin from './requires-login';
 // TODO: import fetch after creating it.
 
 
 
 export class FrontOfCard extends React.Component {
-  componentDidMount() {
-    //dispatch the fetch
-    this.props.dispatch();
-  }
+    componentDidMount() {
+        //dispatch the fetch
+        this.props.dispatch();
+    }
+    guessSubmit() {
+        const guess = this.refs.userquess.value;
+        //console.log the guess here
+        return this.props.dispatch(userGuess(guess))
 
-  createFrontCard(){
-    // const {userAnswer, currentQuestion, numCorrect, numIncorrect} = this.props;
-    // const {correctAnswer } = this.props.currentQuestion.Answer;
-    // const 
-    // if(userAnswer === correctAnswer) {
-      return (
-        <div className="card with_shadow card_correct">
-          <div className="arrow_box">
-            <h2>SQL Question</h2>
-            <p>question goes here</p>
-          </div>
-          Your Guess: <input type="text"></input>
-          <div>
-            <Link to="/backofcard"><button>Submit</button></Link>
+            .then(() => this.props.history.push('/backofcard'))
+    }
+    createFrontCard() {
+        // const {userAnswer, currentQuestion, numCorrect, numIncorrect} = this.props;
+        // const {correctAnswer } = this.props.currentQuestion.Answer;
+        // const 
+        // if(userAnswer === correctAnswer) {
+
+        //here we will possiblly have a sort, or on the reducer, or on the route! but it will be 
+        //showing us the question that's "next"
+
+        //create redux form that on submit
+        //dispatches the field input 
+
+        //map through the question and display the fields from the question object
+        const currentQuestion = this.props.currentQuestion;
+        return (
+           
+            <div className="card with_shadow card_correct">
+                <div className="arrow_box">
+                    <h2>SQL Question</h2>
+                    <p>{curentQuestion}</p>
+                </div>
+                Your Guess: <input type="text" ref="userguess"></input>
+                <div>
+                    <button onClick={() => this.guessSubmit()} type="input">Submit</button>
           </div>
         </div>
-      )
-    } 
-
-  //displays the card after loading
+                )
+              }
+          
+            //displays the card after loading
   rerender(){
     return <div className="x">{this.createFrontCard()}</div>
-  }
-
+                }
+              
   render() {
     if(this.props.loading){
       return <h2>Loading...</h2>
-    } else {
+                } else {
       return this.rerender();
-    }
-  }
-}
-
-
-const mapStateToProps = (state, props) => {
-  const currentQuestionID = props.currentQuestion;
+              }
+            }
+          }
+          
+          // user: test1
+// userquestions: [{question: 1 answer: 1 correct: 0 incorrect :0},
+// {question: 2 answer: 2 correct: 0 incorrect :0}
+                
+const mapStateToProps = (state) => {
   return ({
-    currentQuestion = state.rootReducer.currentQuestionID.question,
-    numCorrect: state.rootReducer.currentQuestion.correct,
-    numIncorrect: state.rootReducer.currentQuestion.incorrect
-  });
-};
-
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
-
-
+                    currentQuestion : userquestions[0].question
+              });
+            };
+            
+            export default withRouter(requiresLogin()(connect(mapStateToProps)(FrontOfCard)));
+            
+            
