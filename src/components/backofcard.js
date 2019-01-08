@@ -15,15 +15,15 @@ export class BackOfCard extends React.Component {
   }
 
   createBackOfCard(){
-    const {userAnswer, currentQuestion, numCorrect, numIncorrect} = this.props;
-    const {correctAnswer } = this.props.currentQuestion.Answer;
+    const {userAnswer, currentQuestion, numCorrect, numIncorrect, currentAnswer} = this.props;
+    // const {correctAnswer } = this.props.currentQuestion.Answer;
     const 
-    if(userAnswer === correctAnswer) {
+    if(userAnswer === currentAnswer) {
       return (
         <div className="card with_shadow card_correct">
           <div className="arrow_box">
             <h2>CORRECT!</h2>
-            <p>The correct answer is: {correctAnswer}</p>
+            <p>The correct answer is: {currentAnswer}</p>
             <p>Your lifetime score on this question is: {numCorrect}/{numIncorrect}</p>
           </div>
           <div>
@@ -64,18 +64,19 @@ export class BackOfCard extends React.Component {
   }
 }
 
-//how to get nextCard??
+
 
 const mapStateToProps = (state, props) => {
   const currentQuestionID = props.currentQuestion;
   return ({
     currentQuestion = state.rootReducer.currentQuestionID.question,
-    numCorrect: state.rootReducer.currentQuestion.correct,
-    numIncorrect: state.rootReducer.currentQuestion.incorrect
+    currentAnswer = state.rooterReducer.currentQuestionID.answer,
+    numCorrect: state.rootReducer.currentQuestionID.correct,
+    numIncorrect: state.rootReducer.currentQuestionID.incorrect
   });
 };
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default requiresLogin()(connect(mapStateToProps)(BackOfCard));
 
 
 
