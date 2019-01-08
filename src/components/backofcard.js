@@ -52,7 +52,7 @@ export class BackOfCard extends React.Component {
 
   //displays the card after loading
   rerender(){
-    return <div className="x">{this.createCard()}</div>
+    return <div className="x">{this.createBackOfCard()}</div>
   }
 
   render() {
