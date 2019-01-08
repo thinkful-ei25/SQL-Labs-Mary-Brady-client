@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import requiresLogin from './requires-login';
 // TODO: import fetch after creating it.
+import {userGuess} from '../actions/frontofcardactions'
 
 
 
@@ -39,7 +40,7 @@ export class FrontOfCard extends React.Component {
             <div className="card with_shadow card_correct">
                 <div className="arrow_box">
                     <h2>SQL Question</h2>
-                    <p>{curentQuestion}</p>
+                    <p>{currentQuestion}</p>
                 </div>
                 Your Guess: <input type="text" ref="userguess"></input>
                 <div>
@@ -69,7 +70,7 @@ export class FrontOfCard extends React.Component {
                 
 const mapStateToProps = (state) => {
   return ({
-                    currentQuestion : userquestions[0].question
+                    currentQuestion : state.userQuestion.questionText
               });
             };
             
