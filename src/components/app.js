@@ -7,6 +7,8 @@ import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import SignupPage from './signup-page';
 import LoginPage from './login-page';
+import FrontOfCard from './frontofcard';
+
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
@@ -47,6 +49,7 @@ export class App extends React.Component {
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/sign-up" component={SignupPage} />
+                <Route exact path="/frontofcard" component={FrontOfCard} />
             </div>
         );
     }
