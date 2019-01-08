@@ -1,6 +1,7 @@
 import {
     FETCH_USERQUESTIONS_SUCCESS,
-    FETCH_USERQUESTIONS_ERROR
+    FETCH_USERQUESTIONS_ERROR,
+    SUBMIT_USERANSWER_SUCCESS
 } from '../actions/frontofcardactions';
 
 const initialState = {

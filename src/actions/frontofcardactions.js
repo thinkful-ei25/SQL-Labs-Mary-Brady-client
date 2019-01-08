@@ -16,7 +16,11 @@ export const fetchUserQuestionsError = error => ({
     type: FETCH_USERQUESTIONS_ERROR,
     error
 });
-
+export const SUBMIT_USERANSWER_SUCCESS = 'SUBMIT_USERANSWER_SUCCESS';
+export const submitUserAnswerSuccess = guess => ({
+    type: SUBMIT_USERANSWER_SUCCESS,
+    guess
+})
 
 export const fetchUserQuestions = () => (dispatch, getState) => {
     const authToken = getState().authReducer.authToken;
