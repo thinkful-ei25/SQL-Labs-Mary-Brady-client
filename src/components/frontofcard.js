@@ -75,5 +75,3 @@ const mapStateToProps = (state) => {
             };
             
             export default withRouter(requiresLogin()(connect(mapStateToProps)(FrontOfCard)));
-            
-            
