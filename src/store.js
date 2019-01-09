@@ -10,7 +10,7 @@ import {setAuthToken, refreshAuthToken} from './actions/auth';
 const store = createStore(
     combineReducers({
         form: formReducer,
-        auth: authReducer,
+        authReducer: authReducer,
         userQuestion: frontofcardReducer,
         protectedData: protectedDataReducer
     }),

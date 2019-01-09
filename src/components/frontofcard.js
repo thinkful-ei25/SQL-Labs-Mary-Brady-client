@@ -12,14 +12,12 @@ import {userGuess, fetchUserQuestions} from '../actions/frontofcardactions'
 export class FrontOfCard extends React.Component {
     componentDidMount() {
 
-        this.props.dispatch(fetchUserQuestions);
+        this.props.dispatch(fetchUserQuestions());
     }
     guessSubmit() {
-        const guess = this.refs.userquess.value;
+        const guess = this.refs.userguess.value;
         //console.log the guess here
-        return this.props.dispatch(userGuess(guess))
-
-            .then(() => this.props.history.push('/backofcard'))
+        return this.props.dispatch(userGuess(guess, this.props.history))
     }
     createFrontCard() {
         // const {userAnswer, currentQuestion, numCorrect, numIncorrect} = this.props;
@@ -35,12 +33,13 @@ export class FrontOfCard extends React.Component {
 
         //map through the question and display the fields from the question object
         const currentQuestion = this.props.currentQuestion;
+
         return (
            
             <div className="card with_shadow card_correct">
                 <div className="arrow_box">
                     <h2>SQL Question</h2>
-                    <p>{currentQuestion}</p>
+                    <p>{currentQuestion.userQuestion?currentQuestion.userQuestion:'Loading.......'}</p>
                 </div>
                 Your Guess: <input type="text" ref="userguess"></input>
                 <div>
@@ -70,7 +69,7 @@ export class FrontOfCard extends React.Component {
                 
 const mapStateToProps = (state) => {
   return ({
-                    currentQuestion : state.userQuestion.questionText
+                    currentQuestion : state.userQuestion,
               });
             };
             

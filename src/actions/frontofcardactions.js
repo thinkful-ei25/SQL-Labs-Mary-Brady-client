@@ -10,6 +10,11 @@ export const fetchUserQuestionsSuccess = question => ({
     type: FETCH_USERQUESTIONS_SUCCESS,
     question
 });
+export const FETCH_USERQUESTION_ID_SUCCESS = 'FETCH_USERQUESTION_ID_SUCCESS';
+export const fetchUserQuestionIDSuccess = questionId => ({
+    type: FETCH_USERQUESTION_ID_SUCCESS,
+    questionId
+});
 
 export const FETCH_USERQUESTIONS_ERROR = 'FETCH_USERQUESTIONS_ERROR';
 export const fetchUserQuestionsError = error => ({
@@ -23,6 +28,7 @@ export const submitUserAnswerSuccess = guess => ({
 })
 
 export const fetchUserQuestions = () => (dispatch, getState) => {
+
     const authToken = getState().authReducer.authToken;
     return fetch(`${API_BASE_URL}/question`, {
         method: 'GET',
@@ -34,19 +40,21 @@ export const fetchUserQuestions = () => (dispatch, getState) => {
         .then(res => res.json())
         .then((res) => {
 
-            dispatch(fetchUserQuestionsSuccess(res.userQuestion))
+            dispatch(fetchUserQuestionsSuccess(res.question.questionText))
+            dispatch(fetchUserQuestionIDSuccess(res.question.questionId))
         })
         .catch(err => {
             dispatch(fetchUserQuestionsError(err));
         });
 };
 
-export const userGuess = (guess) => {
+export const userGuess = (guess, history) => {
+    history.push('/backofcard')
     return {
         type: SUBMIT_USERANSWER_SUCCESS,
         guess
     }
-} 
+}
 
 
 
