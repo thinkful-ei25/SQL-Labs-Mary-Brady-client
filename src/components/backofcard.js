@@ -6,7 +6,11 @@ import { Link } from 'react-router-dom';
 import requiresLogin from './requires-login';
 // TODO: import fetch after creating it.
 
-
+    //on component did mount dispatch the post
+    //user answer and id: userAnswer questionId POST
+    //it take the answer and display it
+    //show stats per question of back of card
+    //next button reloads the front of card
 
 export class BackOfCard extends React.Component {
   componentDidMount() {
