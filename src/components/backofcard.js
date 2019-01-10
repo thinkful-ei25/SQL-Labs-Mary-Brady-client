@@ -4,31 +4,39 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import requiresLogin from './requires-login';
-// TODO: import fetch after creating it.
+import { makeGuess, 
+  // guessDismount
+ } from '../actions/backofcardactions'
 
-    //on component did mount dispatch the post
-    //user answer and id: userAnswer questionId POST
-    //it take the answer and display it
-    //show stats per question of back of card
-    //next button reloads the front of card
+
 
 export class BackOfCard extends React.Component {
   componentDidMount() {
-    //dispatch the fetch
-    this.props.dispatch();
+ 
+    this.props.dispatch(makeGuess(this.props.userGuess, this.props.userQuestionID));
+
   }
 
-  createBackOfCard(){
-    const {userAnswer, currentQuestion, numCorrect, numIncorrect, currentAnswer} = this.props;
-    // const {correctAnswer } = this.props.currentQuestion.Answer;
-    const 
-    if(userAnswer === currentAnswer) {
+  createBackOfCard() { 
+    const trueorfalse = this.props.trueorfalse;
+    const questionText = this.props.questionText;
+    const userGuess = this.props.userGuess;
+    const correctAnswer = this.props.correctAnswer;
+    const numCorrect = this.props.numCorrect;
+    const numIncorrect = this.props.numIncorrect
+    
+    if (trueorfalse) {
       return (
         <div className="card with_shadow card_correct">
           <div className="arrow_box">
+            <h1>{questionText}</h1>
             <h2>CORRECT!</h2>
-            <p>The correct answer is: {currentAnswer}</p>
-            <p>Your lifetime score on this question is: {numCorrect}/{numIncorrect}</p>
+            <p>Correct Answer: {correctAnswer}</p>
+            <p>Your guess: {userGuess}</p>
+            <p></p>
+            <p>Your lifetime score on this question is:</p>
+            <p>Number of times Correct: {numCorrect}</p>
+            <p>Number of times Incorrect: {numIncorrect}</p>
           </div>
           <div>
             <p>Keep up the great work!</p>
@@ -36,13 +44,17 @@ export class BackOfCard extends React.Component {
           </div>
         </div>
       )
-    } else if (userAnswer != correctAnswer) {
+    } else {
       return (
         <div className="card with_shadow card_incorrect">
           <div className="arrow_box">
+            <h1>{questionText}</h1>
             <h2>Wrong....</h2>
-            <p>The correct answer is: {correctAnswer}</p>
-            <p>Your lifetime score on this question is: {numCorrect}/{numIncorrect}</p>
+            <p>Correct Answer: {correctAnswer}</p>
+            <p>Your guess: {userGuess}</p>
+            <p>Your lifetime score on this question is:</p>
+            <p>Number of times Correct: {numCorrect}</p>
+            <p>Number of times Incorrect: {numIncorrect}</p>
           </div>
           <div>
             <p>Keep up the great work!</p>
@@ -54,54 +66,27 @@ export class BackOfCard extends React.Component {
 
   }
 
-  //displays the card after loading
-  rerender(){
+  
+  render() {
+
     return <div className="x">{this.createBackOfCard()}</div>
   }
 
-  render() {
-    if(this.props.loading){
-      return <h2>Loading...</h2>
-    } else {
-      return this.rerender();
-    }
-  }
 }
 
-
-
 const mapStateToProps = (state, props) => {
-  const currentQuestionID = props.currentQuestion;
   return ({
-    currentQuestion = state.rootReducer.currentQuestionID.question,
-    currentAnswer = state.rooterReducer.currentQuestionID.answer,
-    numCorrect: state.rootReducer.currentQuestionID.correct,
-    numIncorrect: state.rootReducer.currentQuestionID.incorrect
+    questionText : (state.backofcardReducer.response)?state.backofcardReducer.response.questionText:'',
+    userQuestionID : state.frontofcardReducer.userQuestionID,
+    userGuess : state.frontofcardReducer.userAnswer,
+    correctAnswer : (state.backofcardReducer.response)?state.backofcardReducer.response.questionAnswer:'',
+    trueorfalse : (state.backofcardReducer.response)?state.backofcardReducer.response.correct:null,
+    numCorrect : (state.backofcardReducer.response)?state.backofcardReducer.response.numCorrect:'',
+    numIncorrect : (state.backofcardReducer.response)?state.backofcardReducer.response.numIncorrect:''
+
   });
 };
 
 export default requiresLogin()(connect(mapStateToProps)(BackOfCard));
 
 
-
-
-// let backOfCard = '';
-// if (correct) {
-//   backOfCard = `
-//   <div>
-//     //create back of card display and text
-//   </div>
-// } else {
-//   backOfCard = `
-//     //create back of card display
-//     `
-// }
-
-
-// render (
-//   <div>
-//   {backOfCard}
-//   </div>
-
-// )
-// }

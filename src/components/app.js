@@ -8,6 +8,8 @@ import Dashboard from './dashboard';
 import SignupPage from './signup-page';
 import LoginPage from './login-page';
 import FrontOfCard from './frontofcard';
+import BackOfCard from './backofcard';
+
 
 import {refreshAuthToken} from '../actions/auth';
 
@@ -50,6 +52,7 @@ export class App extends React.Component {
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/sign-up" component={SignupPage} />
                 <Route exact path="/frontofcard" component={FrontOfCard} />
+                <Route exact path="/backofcard" component={BackOfCard} />
             </div>
         );
     }

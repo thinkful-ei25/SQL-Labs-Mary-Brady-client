@@ -1,28 +1,36 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export class Dashboard extends React.Component {
-    
+
 
     render() {
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
-                    Username: {this.props.username}
+                    Welcome: {this.props.username}
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
+                <div className="desc">SQL Learning Labs is a platform made to test your knowledge
+                of SQL Bash commands, and to help you accelerate your learning.</div>
 
-                <Link to="/frontofcard"><button>Get Started</button></Link>
+                <div className="Update"><p className="headertext">UPDATES 1/10/2019</p>
+                    <p>Launched site & excited to present to you our first SQL Basics series. Click below to get started.
+                    Questions or feedback? We'd love to hear from you: <a href="mailto:sqllearninglabs@gmail.com?Subject=SQL%20is%20Awesome" target="_top">Email Us!</a>
+                    </p>
+                </div>
+                <div className="dashboard-name">Let's get started: {this.props.name}</div>
+
+                <Link to="/frontofcard"><button>SQL Basics</button></Link>
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.authReducer;
+    const { currentUser } = state.authReducer;
     return {
         username: state.authReducer.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,

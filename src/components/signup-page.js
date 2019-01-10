@@ -19,7 +19,7 @@ export function SignupPage(props) {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.authReducer.currentUser !== null
 });
 
 export default connect(mapStateToProps)(SignupPage);

@@ -5,16 +5,21 @@ import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import frontofcardReducer from './reducers/frontofcardreducer';
+import backofcardReducer from './reducers/backofcardreducer';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
+import logger from 'redux-logger';
 
 const store = createStore(
     combineReducers({
         form: formReducer,
         authReducer: authReducer,
-        userQuestion: frontofcardReducer,
+        frontofcardReducer: frontofcardReducer,
+        backofcardReducer: backofcardReducer,
         protectedData: protectedDataReducer
     }),
-    applyMiddleware(thunk)
+    applyMiddleware(thunk, 
+        // logger
+        )
 );
 
 // Hydrate the authToken from localStorage if it exist
