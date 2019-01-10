@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import './form.css';
 
 import SignupForm from './signup-form';
 
@@ -10,10 +11,10 @@ export function SignupPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div className="home">
-            <h2>Sign Up for SQL Learning Labs</h2>
+        <div className="form-box">
+            <h2 className="form-title" align="center">Create an Account</h2>
             <SignupForm />
-            <Link to="/login">Login</Link>
+            <Link to="/login"><p className="login-link" align="center"> or Login</p></Link>
         </div>
     );
 }
