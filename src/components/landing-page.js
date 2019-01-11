@@ -47,7 +47,7 @@ export function LandingPage(props) {
           <div className="support-section-row">
             <div className="support-section-content">
               <span className="support-section-header">
-                Why Spaced Repetition Works
+                Why Spaced Repetition?
               </span>
               <h3 className="support-section-copy">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
