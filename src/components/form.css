@@ -54,7 +54,7 @@ form.sign-up {
   cursor: pointer;
   border-radius: 4px;
   color: #fff;
-  background: linear-gradient(to right, rgb(76, 113, 206), rgb(60, 57, 244));
+  background: rgb(101, 21, 221);
   border: 0;
   padding-left: 50px;
   padding-right: 50px;
@@ -89,7 +89,7 @@ form.sign-up {
 
 .form-login-link {
   font-size: 20px;
-  color: rgb(101, 21, 221);
+  color: #ff8a00;
   padding-top: 15px;
   margin-top: 25px;
   padding-bottom: 30px;

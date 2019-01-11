@@ -48,9 +48,12 @@ export function LandingPage(props) {
                 Why Spaced Repetition?
               </span>
               <h3 className="support-section-copy">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas nec ultrices magna, sed placerat tortor. Nullam
-                efficitur vulputate tincidunt. Pellentesque eget congue justo.
+                <strong>Repetition. Repetition. Repetition!</strong> <br/>Our goal is to help users feel more
+                rewarded when they get an answer right, and to motivate them to
+                try again when the get the answer wrong. By seeing the one's you
+                know less often, we are able to try again at those that we
+                haven't quite mastered. Space Repetition provides a dynamic
+                user-by-user case for learning better, and faster.
               </h3>
               <div className="support-section-buttons" />
               <Link to="/sign-up">

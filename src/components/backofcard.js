@@ -53,12 +53,18 @@ export class BackOfCard extends React.Component {
           <div className="wrong-card-image" />
           <div className="card-question">
             <h3 className="question-text">🙁 Not Quite 📖 </h3>
-            <p className="question-number-text">Your Guess: {userGuess}</p>
             <p className="question-number-text">
-              Correct Answer:<br /> <code>{correctAnswer}</code>
+              Your Guess:{' '}
+              <span className="user-guess">
+                <code>{userGuess}</code>
+              </span>
             </p>
             <p className="question-number-text">
-              Your Lifetime Score: {percentage.toFixed(0)}%
+              Correct Answer:
+              <br /> <code>{correctAnswer}</code>
+            </p>
+            <p className="question-number-text">
+              Question's Score: {percentage.toFixed(0)}%
             </p>
             <hr />
           </div>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { Link } from 'react-router-dom';
-import mainLogo from '../assets/logo2.png';
+import mainLogo from '../assets/logo.png';
 import './header-bar.css';
 
 export class HeaderBar extends React.Component {
@@ -34,7 +34,7 @@ export class HeaderBar extends React.Component {
           <div className="login header-item-login">
             <Link to="/login">
               <strong>
-                <a className="login-link">LOG IN</a>
+                <a className="login-link">Login</a>
               </strong>
             </Link>
           </div>
@@ -53,7 +53,8 @@ export class HeaderBar extends React.Component {
             <div className="logo header-item">
               <Link to="/">
                 <div className="logo-img">
-                  <img src={mainLogo} alt="SQL Learning Labs Logo" />
+                  <img className="logo-larger"
+                src={mainLogo} alt="SQL Learning Labs Logo" />
                 </div>
               </Link>
             </div>
