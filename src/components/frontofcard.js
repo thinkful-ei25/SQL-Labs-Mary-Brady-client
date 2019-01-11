@@ -7,6 +7,9 @@ import requiresLogin from './requires-login';
 import { userGuess, fetchUserQuestions } from '../actions/frontofcardactions';
 import { guessDismount } from '../actions/backofcardactions';
 import { Link } from 'react-router-dom';
+
+import TitleBanner from './titlebanner';
+
 import './frontofcard.css';
 
 export class FrontOfCard extends React.Component {
@@ -30,7 +33,7 @@ export class FrontOfCard extends React.Component {
           <div className="dashboard-background">
             <div className="dashboard-banner">
               <div className="welcome-message-prompt">
-                <div className="left-banner">📗 SQL Beginner!</div>
+                <TitleBanner title="SQL Learning Labs: Basics" />
               </div>
             </div>
           </div>
