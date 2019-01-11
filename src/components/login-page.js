@@ -20,7 +20,6 @@ export function LoginPage(props) {
       <LoginForm />
       <Link to="/sign-up">
         <p className="form-login-link" align="center">
-          {' '}
           or Sign-up
         </p>
       </Link>
