@@ -113,18 +113,17 @@
   padding-right: 8%;
 }
 
-.next-question-box{
+.next-question-box {
   height: 100%;
   margin: 0 auto;
   padding-left: 8%;
   padding-right: 8%;
   padding-top: 15px;
-
 }
 
 .encourage {
-    text-align: center;
-      font-size: 17px;
+  text-align: center;
+  font-size: 17px;
   color: #2e2e2e;
 }
 .your-answer {
@@ -174,7 +173,6 @@
 }
 
 .guess-button {
-  /* margin: auto 0; */
   width: 100%;
   cursor: pointer;
   border-radius: 4px;
@@ -185,7 +183,6 @@
   padding-right: 40px;
   padding-bottom: 10px;
   padding-top: 10px;
-  font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }

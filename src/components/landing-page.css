@@ -1,26 +1,5 @@
-*,
-:after,
-:before {
-  box-sizing: inherit;
-}
-
-div {
-  display: block;
-}
-
-body {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  color: #333;
-  font-family: Neutrif, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-  position: relative;
-}
-
 .landing-title {
-  color:rgb(101,21,221);
+  color: rgb(101, 21, 221);
   font-weight: 400;
   vertical-align: baseline;
   font-size: 70px;

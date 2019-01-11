@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import correctImg from '../assets/landing-correct-answer.png';
-import wrongImg from '../assets/landing-wrong-answer.png';
-import forget from "../assets/forgetting.png";
+import forget from '../assets/forgetting.png';
 import mainImg from '../assets/landing-main-page.png';
 
 import './landing-page.css';
@@ -54,15 +52,15 @@ export function LandingPage(props) {
                 Maecenas nec ultrices magna, sed placerat tortor. Nullam
                 efficitur vulputate tincidunt. Pellentesque eget congue justo.
               </h3>
-                          <div className="support-section-buttons" />
-                          <Link to="/sign-up">
-                              <button className="support-section-button">Register</button>
-                          </Link>
+              <div className="support-section-buttons" />
+              <Link to="/sign-up">
+                <button className="support-section-button">Register</button>
+              </Link>
+            </div>
+            <div className="learning-img">
+              <div className="curve">
+                <img className="image" width="50%" src={forget} />
               </div>
-                      <div className="learning-img">
-                          <div className="curve">
-                              <img className="image" width="50%" src={forget} />
-                          </div>
             </div>
           </div>
         </div>

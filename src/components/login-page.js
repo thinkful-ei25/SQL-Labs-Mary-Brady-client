@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import placeholderimg from '../assets/placeholder.png';
 import './form.css';
 
 import LoginForm from './login-form';
@@ -16,7 +15,6 @@ export function LoginPage(props) {
       <h2 className="form-title" align="center">
         Welcome Back!
       </h2>
-      {/* <p>Login Here</p> */}
       <LoginForm />
       <Link to="/sign-up">
         <p className="form-login-link" align="center">

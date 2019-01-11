@@ -27,7 +27,8 @@
   padding-top: 30px;
 }
 
-.left-banner, .title-banner {
+.left-banner,
+.title-banner {
   -webkit-box-flex: 1;
   flex: 1;
   display: -webkit-box;

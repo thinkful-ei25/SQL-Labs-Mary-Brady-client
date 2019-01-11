@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import requiresLogin from './requires-login';
 import { userGuess, fetchUserQuestions } from '../actions/frontofcardactions';
 import { guessDismount } from '../actions/backofcardactions';
-import { Link } from 'react-router-dom';
 
 import TitleBanner from './titlebanner';
 
@@ -19,7 +18,9 @@ export class FrontOfCard extends React.Component {
   guessSubmit() {
     const guess = this.refs.userguess.value;
     this.props.dispatch(guessDismount());
-      return this.props.dispatch(userGuess(guess.replace(/\s{2,}/g, ' '), this.props.history));
+    return this.props.dispatch(
+      userGuess(guess.replace(/\s{2,}/g, ' '), this.props.history)
+    );
   }
   createFrontCard() {
     const currentQuestion = this.props.currentQuestion;
@@ -48,20 +49,31 @@ export class FrontOfCard extends React.Component {
                   </div> */}
                 </div>
                 <div className="card-question">
-                    <h3 className="question-number-text">Question:</h3>
+                  <h3 className="question-number-text">Question</h3>
                   <p className="question-text">
                     {currentQuestion.userQuestion
                       ? currentQuestion.userQuestion
                       : 'Loading.......'}
                   </p>
-                                <hr />
+                  <hr />
                 </div>
-                <div className="card-input" >
-                    <p className="your-answer">Answer Your Best Guess</p>
-                    <input type="text" className="question-input-field" ref="userguess" required></input>
-                    <div className="position-button">
-                        <button className="guess-button" onClick={() => this.guessSubmit()} type="input">Submit</button>
-                    </div>
+                <div className="card-input">
+                  <p className="your-answer">Answer Your Best Guess</p>
+                  <input
+                    type="text"
+                    className="question-input-field"
+                    ref="userguess"
+                    required
+                  />
+                  <div className="position-button">
+                    <button
+                      className="guess-button"
+                      onClick={() => this.guessSubmit()}
+                      type="input"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -99,10 +111,3 @@ export default withRouter(
   requiresLogin()(connect(mapStateToProps)(FrontOfCard))
 );
 
-// <div className="card with_shadow card_correct">
-
-//     Your Guess: <input type="text" ref="userguess" required></input>
-//     <div>
-//         <button onClick={() => this.guessSubmit()} type="input">Submit</button>
-//     </div>
-// </div>

@@ -18,11 +18,7 @@ export class HeaderBar extends React.Component {
     if (this.props.loggedIn) {
       buttonMenu = (
         <div className="login header-item-login">
-          <a
-            href="/"
-            className="login-link"
-            onClick={() => this.logOut()}
-          >
+          <a href="/" className="login-link" onClick={() => this.logOut()}>
             LOGOUT
           </a>
         </div>
@@ -38,7 +34,7 @@ export class HeaderBar extends React.Component {
           <div className="login header-item-login">
             <Link to="/login">
               <strong>
-                <a  className="login-link">LOG IN</a>
+                <a className="login-link">LOG IN</a>
               </strong>
             </Link>
           </div>

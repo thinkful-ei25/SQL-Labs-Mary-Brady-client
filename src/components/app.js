@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import '../index.css';
@@ -42,18 +42,17 @@ export class App extends React.Component {
 
   render() {
     return (
-
       <div className="wrapper">
-            <HeaderBar />
+        <HeaderBar />
         <div className="layout">
-            <div className="layout-content">
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/sign-up" component={SignupPage} />
-          <Route exact path="/frontofcard" component={FrontOfCard} />
-          <Route exact path="/backofcard" component={BackOfCard} />
-                </div>
+          <div className="layout-content">
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/sign-up" component={SignupPage} />
+            <Route exact path="/frontofcard" component={FrontOfCard} />
+            <Route exact path="/backofcard" component={BackOfCard} />
+          </div>
         </div>
       </div>
     );

@@ -23,21 +23,27 @@ export class SignupForm extends React.Component {
         className="sign-up"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
-            <label className="form-label" htmlFor="firstName">First name</label>
+        <label className="form-label" htmlFor="firstName">
+          First name
+        </label>
         <Field
           component={Input}
           type="text"
           name="firstName"
           className="input-field"
         />
-            <label className="form-label" htmlFor="lastName">Last name</label>
+        <label className="form-label" htmlFor="lastName">
+          Last name
+        </label>
         <Field
           component={Input}
           type="text"
           name="lastName"
           className="input-field"
         />
-            <label className="form-label" htmlFor="username">Username</label>
+        <label className="form-label" htmlFor="username">
+          Username
+        </label>
         <Field
           component={Input}
           className="input-field"
