@@ -1,7 +1,7 @@
 .dashboard-layout {
   padding-top: 0;
   position: relative;
-  padding: 50px 0;
+  padding: 40px 0;
   background-color: #ffffff;
   transition: background 0.3s ease-in-out;
 }
@@ -34,7 +34,7 @@
   /* display: flex; */
   -webkit-box-align: center;
   align-items: center;
-  color: #242729;
+  color: #ffffff;
   font-size: 32px;
 }
 
@@ -56,7 +56,7 @@
 .dashboard-background {
   height: 100px;
   margin-top: -60px;
-  background-color: #fbfcfd;
+  background-color: rgb(101, 21, 221);
   -webkit-box-shadow: 0px 5px 5px -5pxrgb (101, 21, 221);
   -moz-box-shadow: 0px 5px 5px -5px rgb(101, 21, 221);
   box-shadow: 0px 5px 5px -5px rgb(101, 21, 221);

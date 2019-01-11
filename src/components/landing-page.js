@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import correctImg from '../assets/landing-correct-answer.png';
 import wrongImg from '../assets/landing-wrong-answer.png';
+import forget from "../assets/forgetting.png";
 import mainImg from '../assets/landing-main-page.png';
 
 import './landing-page.css';
@@ -23,7 +24,7 @@ export function LandingPage(props) {
               practice and master SQL Bash Commands!{' '}
             </p>
             <Link to="/sign-up">
-              <button className="hero-button">Sign-up!</button>
+              <button className="hero-button">📚 Get Smart!</button>
             </Link>
           </div>
         </div>
@@ -53,25 +54,29 @@ export function LandingPage(props) {
                 Maecenas nec ultrices magna, sed placerat tortor. Nullam
                 efficitur vulputate tincidunt. Pellentesque eget congue justo.
               </h3>
-              <div className="support-section-buttons" />
-              <Link to="/sign-up">
-                <button className="support-section-button">Sign-up!</button>
-              </Link>
+                          <div className="support-section-buttons" />
+                          <Link to="/sign-up">
+                              <button className="support-section-button">Sign-up!</button>
+                          </Link>
+              </div>
+                      <div className="learning-img">
+                          <div className="curve">
+                              <img className="image" width="50%" src={forget} />
+                          </div>
             </div>
           </div>
         </div>
       </div>
-    
-        <div className="footer">
-              <div className="footer-container">
-                  <div className="footer-row">
-                    <div className="footer-copyright">
-                    SQL Learning Labs Was Created by Mary and Brady
-                    </div>
-                  </div>
-              </div>
-        
+
+      <div className="footer">
+        <div className="footer-container">
+          <div className="footer-row">
+            <div className="footer-copyright">
+              SQL Learning Labs Was Created by Mary and Brady
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   );
 }

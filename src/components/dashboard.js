@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 export class Dashboard extends React.Component {
   render() {
     return (
-      // entire dashboard
-
       <div className="dashboard-layout">
         <div className="background-image" />
         {/* top part of dashboard */}
@@ -21,11 +19,6 @@ export class Dashboard extends React.Component {
                 <div className="left-banner">
                   👋 Welcome {this.props.name}!
                 </div>
-                <div className="right-banner">
-                  <p>Total Questions Answer: 100 </p>
-                  <p>Total Correct Answers: 15 </p>
-                  <p>Skill Level: 😑 </p>
-                </div>
               </div>
             </div>
           </div>
@@ -33,9 +26,9 @@ export class Dashboard extends React.Component {
           <div className="dashboard-main">
             <div className="dashboard-box">
               <div className="title">
-                <h1>SQL Learning Labs</h1>
+                            <h1> 📗 SQL Beginner </h1>
               </div>
-              <h3 className="level">Basic</h3>
+              <h3 className="level">10 questions  |   Lifetime Score: 75%</h3>
               <div className="about-cards">
                 SQL Learning Labs is a platform made to test your knowledge of
                 SQL Bash commands, and to help you accelerate your learning.
@@ -46,9 +39,9 @@ export class Dashboard extends React.Component {
             </div>
             <div className="dashboard-box">
               <div className="title">
-                <h1>SQL Learning Labs (Coming Soon): </h1>
+                            <h1> 🔖 SQL Intermediate </h1>
               </div>
-              <h3 className="level">Intermediate</h3>
+              <h3 className="level">Coming Soon</h3>
               <div className="about-cards">
                 SQL Learning Labs is a platform made to test your knowledge of
                 SQL Bash commands, and to help you accelerate your learning.

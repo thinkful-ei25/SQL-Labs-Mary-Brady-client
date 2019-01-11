@@ -74,7 +74,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-
 #header .header-item {
   padding: 10px 23px;
 }
@@ -85,9 +84,9 @@
 
 #header .login {
   text-transform: uppercase;
-      -webkit-box-flex: 1;
-    flex: 1;
-    text-align: right;
+  -webkit-box-flex: 1;
+  flex: 1;
+  text-align: right;
 }
 
 #header .login strong {
@@ -96,39 +95,38 @@
 }
 
 #signup {
-      position: relative;
-    width: 190px;
-    height: 80px;
-    padding: 0 !important;
-    overflow: hidden;
-    transition: width 0.3s ease-in-out;
+  position: relative;
+  width: 190px;
+  height: 80px;
+  padding: 0 !important;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
 }
-
-
 
 #signup .button {
-      width: 190px;
-    height: 80px;
-    padding: 0;
-    line-height: 73px;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-        position: relative;
-    display: inline-block;
-    background-color: rgb(101, 21, 221);
-    color: #fff;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
+  width: 190px;
+  height: 80px;
+  padding: 0;
+  line-height: 73px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: inline-block;
+  background-color: rgb(101, 21, 221);
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 2px;
 }
-
 
 .login-link {
   text-align: right;
+  color: #0a369d;
 }
 
 .sign-up-button {
+  font-size: 18px;
   width: 190px;
   height: 70px;
   padding: 0;
@@ -152,5 +150,3 @@
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
-
-

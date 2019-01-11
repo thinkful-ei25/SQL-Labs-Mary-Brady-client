@@ -19,7 +19,7 @@ export function LoginPage(props) {
       {/* <p>Login Here</p> */}
       <LoginForm />
       <Link to="/sign-up">
-        <p className="login-link" align="center">
+        <p className="form-login-link" align="center">
           {' '}
           or Sign-up
         </p>

@@ -17,10 +17,14 @@ export class HeaderBar extends React.Component {
     let buttonMenu;
     if (this.props.loggedIn) {
       buttonMenu = (
-        <div className="header-item" id="signup">
-          <Link to="/sign-up">
-            <a className="button sign-up-button" onClick={() => this.logOut()}>LOGOUT</a>
-          </Link>
+        <div className="login header-item-login">
+          <a
+            href="/"
+            className="login-link"
+            onClick={() => this.logOut()}
+          >
+            LOGOUT
+          </a>
         </div>
         // <div className="button-position">
         //   <button className="login-signup-button" onClick={() => this.logOut()}>
@@ -34,16 +38,13 @@ export class HeaderBar extends React.Component {
           <div className="login header-item-login">
             <Link to="/login">
               <strong>
-                <a className="login-link">LOG IN</a>
+                <a  className="login-link">LOG IN</a>
               </strong>
             </Link>
           </div>
           <div className="header-item" id="signup">
             <Link to="/sign-up">
-              <a className="button sign-up-button">SIGN-UP</a>
-              {/* <button className="login-signup-button join-position">
-                Join
-              </button> */}
+              <p className="button sign-up-button">Register</p>
             </Link>
           </div>
         </Fragment>
@@ -51,7 +52,6 @@ export class HeaderBar extends React.Component {
     }
     return (
       <header role="banner" id="header">
-        {/* <div className="nav-container"> */}
         <div className="header-main">
           <div className="header-left">
             <div className="logo header-item">

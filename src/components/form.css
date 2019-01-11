@@ -99,9 +99,8 @@ margin: auto 0;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
     
-    .login-link {
-        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-        color: #E1BEE7;
+    .form-login-link {
+        color: #4671FB;
         padding-top: 15px;
     }
     

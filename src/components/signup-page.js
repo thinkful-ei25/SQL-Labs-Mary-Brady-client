@@ -14,7 +14,7 @@ export function SignupPage(props) {
         <div className="form-box">
             <h2 className="form-title" align="center">Create an Account</h2>
             <SignupForm />
-            <Link to="/login"><p className="login-link" align="center"> or Login</p></Link>
+            <Link to="/login"><p className="form-login-link" align="center"> or Login</p></Link>
         </div>
     );
 }
