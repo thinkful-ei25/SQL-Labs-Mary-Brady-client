@@ -56,7 +56,7 @@ export function LandingPage(props) {
               </h3>
                           <div className="support-section-buttons" />
                           <Link to="/sign-up">
-                              <button className="support-section-button">Sign-up!</button>
+                              <button className="support-section-button">Register</button>
                           </Link>
               </div>
                       <div className="learning-img">
