@@ -16,7 +16,7 @@ export class FrontOfCard extends React.Component {
   guessSubmit() {
     const guess = this.refs.userguess.value;
     this.props.dispatch(guessDismount());
-    return this.props.dispatch(userGuess(guess, this.props.history));
+      return this.props.dispatch(userGuess(guess.replace(/\s{2,}/g, ' '), this.props.history));
   }
   createFrontCard() {
     const currentQuestion = this.props.currentQuestion;
@@ -40,44 +40,28 @@ export class FrontOfCard extends React.Component {
             <div className="question-card-size">
               <div className="question-card">
                 <div className="card-image">
-                  <div className="card-img-overlay">
+                  {/* <div className="card-img-overlay">
                     <span className="question-num">Question #1</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="card-question">
-                  <p>
+                    <h3 className="question-number-text">Question:</h3>
+                  <p className="question-text">
                     {currentQuestion.userQuestion
                       ? currentQuestion.userQuestion
                       : 'Loading.......'}
                   </p>
+                                <hr />
                 </div>
-                <div className="card-input" />
+                <div className="card-input" >
+                    <p className="your-answer">Answer Your Best Guess</p>
+                    <input type="text" className="question-input-field" ref="userguess" required></input>
+                    <div className="position-button">
+                        <button className="guess-button" onClick={() => this.guessSubmit()} type="input">Submit</button>
+                    </div>
+                </div>
               </div>
             </div>
-
-            {/* <div className="dashboard-box">
-              <div className="title">
-                <h1> 📗 SQL Beginner </h1>
-              </div>
-              <h3 className="level">10 questions | Lifetime Score: 75%</h3>
-              <div className="about-cards">
-                SQL Learning Labs is a platform made to test your knowledge of
-                SQL Bash commands, and to help you accelerate your learning.
-              </div>
-              <Link to="/frontofcard">
-                <button>SQL Basics</button>
-              </Link>
-            </div> */}
-            {/* <div className="dashboard-box">
-              <div className="title">
-                <h1> 🔖 SQL Intermediate </h1>
-              </div>
-              <h3 className="level">Coming Soon</h3>
-              <div className="about-cards">
-                SQL Learning Labs is a platform made to test your knowledge of
-                SQL Bash commands, and to help you accelerate your learning.
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
@@ -113,10 +97,7 @@ export default withRouter(
 );
 
 // <div className="card with_shadow card_correct">
-//     <div className="arrow_box">
-//         <h2>SQL Question</h2>
-//         <p>{currentQuestion.userQuestion ? currentQuestion.userQuestion : 'Loading.......'}</p>
-//     </div>
+
 //     Your Guess: <input type="text" ref="userguess" required></input>
 //     <div>
 //         <button onClick={() => this.guessSubmit()} type="input">Submit</button>

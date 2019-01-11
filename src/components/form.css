@@ -1,114 +1,103 @@
-        .form-box {
-        background-color: #FFFFFF;
-        width: 500px;
-        margin: 7em auto;
-        border-radius: 3px;
-        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-    }
-    .form-title {
-        padding-top: 40px;
-        color: #8C55AA;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: bold;
-        font-size: 23px;
+.form-box {
+    margin: 0 auto;
+  background-color: #ffffff;
+  max-width: 50%;
+  min-width: 380px;
+  margin: 7em auto;
+  border-radius: 3px;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+.form-title {
+  padding-top: 40px;
+  padding-bottom:50px;
+  color: #8c55aa;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
 
-    }
+.form-label {
+  color: rgb(101, 21, 221);
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  margin-left: 40%;
 
-    .form-label {
-            color: rgb(38, 50, 56);
-                font-weight: 700;
-    font-size: 16px;
-        letter-spacing: 1px;
-            padding: 10px 20px;
-                margin-left: 46px;
-                    text-align: center;
+  text-align: center;
+}
 
-    }
-    
-    .input-field {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 20px;
-    margin-left: 46px;
-    text-align: center;
-    }
-    
-    form.sign-up {
-        padding-top: 20px;
-    }
+.input-field {
+  width: 80%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 20px;
+  margin-left: 10%;
+    margin-right: 10%;
+  text-align: center;
+}
+
+form.sign-up {
+  padding-top: 20px;
+}
 
 .form-button {
-margin: auto 0;
-  width: 40%;
+  /* margin-left: 10%; */
+  width: 35%;
   cursor: pointer;
-  border-radius: 5em;
+  border-radius: 4px;
   color: #fff;
   background: linear-gradient(to right, rgb(76, 113, 206), rgb(60, 57, 244));
+  border: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 26%;
+  margin-right: 23%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.input-field:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  background: linear-gradient(to right, #9c27b0, #e040fb);
   border: 0;
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 10px;
   padding-top: 10px;
   font-family: 'Ubuntu', sans-serif;
-  /* margin-left: 35%; */
+  margin-left: 35%;
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
-    
 
+.form-login-link {
+font-size: 20px;
+  color: rgb(101, 21, 221);
+  padding-top: 15px;
+  margin-top: 25px;
+  padding-bottom:30px;
+}
 
-
-
-
-
-
-
-
-
-
-    
-   
-    .input-field:focus{
-        border: 2px solid rgba(0, 0, 0, 0.18) !important;
-        
-    }
-    
-    .submit {
-      cursor: pointer;
-        border-radius: 5em;
-        color: #fff;
-        background: linear-gradient(to right, #9C27B0, #E040FB);
-        border: 0;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        font-family: 'Ubuntu', sans-serif;
-        margin-left: 35%;
-        font-size: 13px;
-        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    }
-    
-    .form-login-link {
-        color: #4671FB;
-        padding-top: 15px;
-    }
-    
-    a {
-        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-        color: #E1BEE7;
-        text-decoration: none
-    }
-
-    
-    
+a {
+  /* text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #e1bee7; */
+  text-decoration: none;
+}

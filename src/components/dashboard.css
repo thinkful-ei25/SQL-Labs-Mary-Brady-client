@@ -38,6 +38,18 @@
   font-size: 32px;
 }
 
+.left-banner,
+.title-banner {
+  -webkit-box-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  /* display: flex; */
+  -webkit-box-align: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 32px;
+}
+
 .right-banner {
   margin-top: -15px;
   /* display: -webkit-box; */
@@ -48,7 +60,7 @@
   position: relative;
   max-width: 100%;
   margin: 85px auto;
-  padding-left: 70px;
+  padding-left: 55px;
   padding-right: 70px;
   clear: both;
 }
