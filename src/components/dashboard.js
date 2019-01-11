@@ -32,7 +32,8 @@ export class Dashboard extends React.Component {
                 SQL Bash commands, and to help you accelerate your learning.
               </div>
               <Link to="/frontofcard">
-                <button>SQL Basics</button>
+                <button className="hero-button">📚 SQL Basics</button>
+                {/* <button>SQL Basics</button> */}
               </Link>
             </div>
             <div className="dashboard-box">
