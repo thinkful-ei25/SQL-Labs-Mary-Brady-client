@@ -8,13 +8,31 @@ body {
     background-color: #ffffff;
 }
 
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding-top: 70px;
+    background: #ffffff;
+    z-index: 2;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+
+}
+
 
 .layout {
-    overflow-x: hidden;
-    box-sizing: border-box;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
-    flex: auto;
+    position: relative;
+    clear: both;
+    min-height: calc(100vh - 281px);
+    transition: padding 0.6s ease-in-out;
+    z-index: 0;
 }
 
     

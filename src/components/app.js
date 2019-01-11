@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import '../index.css';
@@ -9,7 +9,6 @@ import SignupPage from './signup-page';
 import LoginPage from './login-page';
 import FrontOfCard from './frontofcard';
 import BackOfCard from './backofcard';
-
 
 import { refreshAuthToken } from '../actions/auth';
 
@@ -41,25 +40,29 @@ export class App extends React.Component {
     }
   }
 
-    render() {
-        return (
-            <div className="layout">
-                <HeaderBar />
-                <Route exact path="/" component={LandingPage} />
-                <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/sign-up" component={SignupPage} />
-                <Route exact path="/frontofcard" component={FrontOfCard} />
-                <Route exact path="/backofcard" component={BackOfCard} />
-            </div>
-        )};
-}
+  render() {
+    return (
 
+      <div className="wrapper">
+            <HeaderBar />
+        <div className="layout">
+            <div className="layout-content">
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/sign-up" component={SignupPage} />
+          <Route exact path="/frontofcard" component={FrontOfCard} />
+          <Route exact path="/backofcard" component={BackOfCard} />
+                </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   hasAuthToken: state.authReducer.authToken !== null,
   loggedIn: state.authReducer.currentUser !== null
 });
-
 
 export default withRouter(connect(mapStateToProps)(App));

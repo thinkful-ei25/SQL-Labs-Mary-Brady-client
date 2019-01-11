@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
@@ -17,42 +17,52 @@ export class HeaderBar extends React.Component {
     let buttonMenu;
     if (this.props.loggedIn) {
       buttonMenu = (
-        <div className="button-position">
-          <button className="login-signup-button" onClick={() => this.logOut()}>
-            Log out
-          </button>
+        <div className="header-item" id="signup">
+          <Link to="/sign-up">
+            <a className="button sign-up-button" onClick={() => this.logOut()}>LOGOUT</a>
+          </Link>
         </div>
+        // <div className="button-position">
+        //   <button className="login-signup-button" onClick={() => this.logOut()}>
+        //     Log out
+        //   </button>
+        // </div>
       );
     } else {
       buttonMenu = (
-        <div>
-          <div className="button-position">
-            <Link to="/sign-up">
-              <button className="login-signup-button join-position">
-                Join
-              </button>
-            </Link>
-          </div>
-
-          <div className="button-position">
+        <Fragment>
+          <div className="login header-item-login">
             <Link to="/login">
-              <button className="login-signup-button">Login</button>
+              <strong>
+                <a className="login-link">LOG IN</a>
+              </strong>
             </Link>
           </div>
-        </div>
+          <div className="header-item" id="signup">
+            <Link to="/sign-up">
+              <a className="button sign-up-button">SIGN-UP</a>
+              {/* <button className="login-signup-button join-position">
+                Join
+              </button> */}
+            </Link>
+          </div>
+        </Fragment>
       );
     }
     return (
-      <header role="banner">
-        <div className="nav-container">
-          <div className="logo">
-            <div className="logo-container">
+      <header role="banner" id="header">
+        {/* <div className="nav-container"> */}
+        <div className="header-main">
+          <div className="header-left">
+            <div className="logo header-item">
               <Link to="/">
-                <img src={mainLogo} alt="SQL Learning Labs Logo" />
+                <div className="logo-img">
+                  <img src={mainLogo} alt="SQL Learning Labs Logo" />
+                </div>
               </Link>
             </div>
           </div>
-          <nav role="navigation ">{buttonMenu}</nav>
+          <div className="header-right">{buttonMenu}</div>
         </div>
       </header>
     );

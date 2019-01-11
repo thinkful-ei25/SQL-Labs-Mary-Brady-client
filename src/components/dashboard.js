@@ -1,55 +1,61 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import './dashboard.css'
+import './dashboard.css';
 
 import { Link } from 'react-router-dom';
 
 export class Dashboard extends React.Component {
   render() {
     return (
-      <div class="dashboard-layout">
-        <div class="layout-content">
-            <div class="row">
-                    <div className="message-left">
-                        Welcome: {this.props.username}
-                    </div>
-                    <div className="message-right">
-                        STATS GO HERE
-                    </div>
+      // entire dashboard
+
+      <div className="dashboard-layout">
+        <div className="background-image" />
+        {/* top part of dashboard */}
+        <div className="dashboard-top">
+          {/* top bar of dashboard */}
+          <div className="dashboard-background">
+            <div className="dashboard-banner">
+              <div className="welcome-message-prompt">
+                <div className="left-banner">
+                  👋 Welcome {this.props.name}!
+                </div>
+                <div className="right-banner">
+                  <p>Total Questions Answer: 100 </p>
+                  <p>Total Correct Answers: 15 </p>
+                  <p>Skill Level: 😑 </p>
+                </div>
+              </div>
             </div>
-            <div class="main-content">
-                <div className="section-title">
-                
-                </div>
-
-                </div>
-          <div className="desc">
-            SQL Learning Labs is a platform made to test your knowledge of SQL
-            Bash commands, and to help you accelerate your learning.
           </div>
+          {/* End of top bar of dashboard */}
+          <div className="dashboard-main">
+            <div className="dashboard-box">
+              <div className="title">
+                <h1>SQL Learning Labs</h1>
+              </div>
+              <h3 className="level">Basic</h3>
+              <div className="about-cards">
+                SQL Learning Labs is a platform made to test your knowledge of
+                SQL Bash commands, and to help you accelerate your learning.
+              </div>
+              <Link to="/frontofcard">
+                <button>SQL Basics</button>
+              </Link>
+            </div>
+            <div className="dashboard-box">
+              <div className="title">
+                <h1>SQL Learning Labs (Coming Soon): </h1>
+              </div>
+              <h3 className="level">Intermediate</h3>
+              <div className="about-cards">
+                SQL Learning Labs is a platform made to test your knowledge of
+                SQL Bash commands, and to help you accelerate your learning.
 
-          <div className="Update">
-            <p className="headertext">UPDATES 1/10/2019</p>
-            <p>
-              Launched site & excited to present to you our first SQL Basics
-              series. Click below to get started. Questions or feedback? We'd
-              love to hear from you:{' '}
-              <a
-                href="mailto:sqllearninglabs@gmail.com?Subject=SQL%20is%20Awesome"
-                target="_top"
-              >
-                Email Us!
-              </a>
-            </p>
+              </div>
+            </div>
           </div>
-          <div className="dashboard-name">
-            Let's get started: {this.props.name}
-          </div>
-
-          <Link to="/frontofcard">
-            <button>SQL Basics</button>
-          </Link>
         </div>
       </div>
     );
@@ -65,3 +71,15 @@ const mapStateToProps = state => {
 };
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+
+{
+  /* <p>Questions or feedback? We'd love to
+              hear from you:{' '}
+              <a
+                href="mailto:sqllearninglabs@gmail.com?Subject=SQL%20is%20Awesome"
+                target="_top"
+              >
+                Email Us!
+              </a>
+            </p> */
+}
